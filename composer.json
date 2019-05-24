@@ -1,0 +1,20 @@
+{
+	"name": "b13/snipper",
+	"type": "typo3-cms-extension",
+	"description": "Keep external links secure by adding rel=\"noopener\" to all external typlinks.",
+	"require": {
+	},
+	"replace": {
+		"snipper": "self.version"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "snipper"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"B13\\Snipper\\": "Classes/"
+		}
+	}
+}
