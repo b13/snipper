@@ -22,6 +22,6 @@ The extension is licensed under GPL v2+, same as the TYPO3 Core.
 For details see the LICENSE file in this repository.
 
 
-###### Credits
+## Credits
 
-* Extension Icon: Kidaubis
+* Extension Icon: Kidaubis, http://www.iconarchive.com/show/office-supplies-icons-by-kidaubis-design/scissors-icon.html
