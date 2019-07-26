@@ -2,6 +2,7 @@
 	"name": "b13/snipper",
 	"type": "typo3-cms-extension",
 	"description": "Keep external links secure by adding rel=\"noopener\" to all external typlinks.",
+	"license": "GPL-2.0-or-later",
 	"require": {
 	},
 	"replace": {
