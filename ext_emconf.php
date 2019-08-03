@@ -9,11 +9,11 @@ $EM_CONF['snipper'] = [
     'state' => 'stable',
     'clearCacheOnLoad' => 1,
     'author_company' => 'b13 GmbH, Stuttgart',
-    'version' => '1.0.0',
+    'version' => '1.1.0',
     'constraints' => [
         'depends' =>
             [
-                'typo3' => '9.5.0-9.9.99',
+                'typo3' => '9.5.0-10.99.99',
             ],
     ],
 ];
