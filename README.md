@@ -21,7 +21,6 @@ The extension is licensed under GPL v2+, same as the TYPO3 Core.
 
 For details see the LICENSE file in this repository.
 
-
 ## Credits
 
-* Extension Icon: Kidaubis, http://www.iconarchive.com/show/office-supplies-icons-by-kidaubis-design/scissors-icon.html
+_snipper_ was initially created by David Steeb in 2019, for [b13, Stuttgart](https://b13.com)
