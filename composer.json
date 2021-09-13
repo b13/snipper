@@ -5,9 +5,6 @@
 	"license": "GPL-2.0-or-later",
 	"require": {
 	},
-	"replace": {
-		"snipper": "self.version"
-	},
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "snipper"
