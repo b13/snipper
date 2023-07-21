@@ -40,9 +40,12 @@ class TypoLinkHandler
 {
     public function postProcessTypoLink(&$parameters, ContentObjectRenderer &$parentObject)
     {
-        if ($parameters['tagAttributes']['target'] === '_blank' && !$parameters['tagAttributes']['rel']) {
+        if (($parameters['tagAttributes']['target'] ?? '') === '_blank' && !($parameters['tagAttributes']['rel'] ?? '')) {
             $parameters['tagAttributes']['rel'] = 'noopener';
             $parameters['finalTagParts']['aTagParams'] .= ' rel="noopener"';
+            if (!isset($parameters['conf']['ATagParams'])) {
+                $parameters['conf']['ATagParams'] = '';
+            }
             $parameters['conf']['ATagParams'] .= ' rel="noopener"';
             $parameters['finalTag'] = str_replace('target="_blank"', 'target="_blank" rel="noopener"', $parameters['finalTag']);
         }
