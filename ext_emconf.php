@@ -13,7 +13,7 @@ $EM_CONF['snipper'] = [
     'constraints' => [
         'depends' =>
             [
-                'typo3' => '9.5.0-10.99.99',
+                'typo3' => '12.4.0-13.99.99',
             ],
     ],
 ];
