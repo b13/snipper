@@ -1,6 +1,8 @@
 <?php
-namespace B13\Snipper\Hooks;
 
+declare(strict_types=1);
+
+namespace B13\Snipper\EventListener;
 
 /***************************************************************
  *  Copyright notice - MIT License (MIT)
@@ -28,23 +30,28 @@ namespace B13\Snipper\Hooks;
  *  THE SOFTWARE.
  ***************************************************************/
 
+use TYPO3\CMS\Core\Attribute\AsEventListener;
+use TYPO3\CMS\Frontend\Event\AfterLinkIsGeneratedEvent;
 
-
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-
-/**
- * Class TypoLinkHandler
- *
- */
-class TypoLinkHandler
+#[AsEventListener]
+final class TypoLinkEventListener
 {
-    public function postProcessTypoLink(&$parameters, ContentObjectRenderer &$parentObject)
+    public function __invoke(AfterLinkIsGeneratedEvent  $event): void
     {
-        if ($parameters['tagAttributes']['target'] === '_blank' && !$parameters['tagAttributes']['rel']) {
-            $parameters['tagAttributes']['rel'] = 'noopener';
-            $parameters['finalTagParts']['aTagParams'] .= ' rel="noopener"';
-            $parameters['conf']['ATagParams'] .= ' rel="noopener"';
-            $parameters['finalTag'] = str_replace('target="_blank"', 'target="_blank" rel="noopener"', $parameters['finalTag']);
+        $attributes = $event->getLinkResult()->getAttributes();
+        if (
+            isset($attributes['target'])
+            && $attributes['target'] === '_blank'
+        ) {
+            $rel = 'noopener';
+            if (isset($attributes['rel'])) {
+                $rel = $attributes['rel'] . ' ' . $rel;
+            }
+            $linkResult = $event->getLinkResult()->withAttribute(
+                'rel',
+                $rel,
+            );
+            $event->setLinkResult($linkResult);
         }
     }
 }
