@@ -4,7 +4,7 @@
 	"description": "Keep external links secure by adding rel=\"noopener\" to all external typolinks.",
 	"license": "GPL-2.0-or-later",
 	"require": {
-		"typo3/cms-backend": "^12.4 || ^13.4 || 14.0.x-dev"
+		"typo3/cms-backend": "^12.4 || ^13.4 || ^14.0"
 	},
 	"extra": {
 		"typo3/cms": {
